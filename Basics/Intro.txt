@@ -1,0 +1,254 @@
+keywords are words that have special meaning in the language we are 
+learning 
+
+Variables are places to store the data in the code 
+
+Variables are something that tend to change 
+
+Constants are something that do not tend to change
+
+Use var or let to declare Variables 
+
+var a =1;
+
+let b = 10;
+
+Note : Always prefer using let to declare variables To avoid Global scope of var 
+
+-var has Global scope so dangerous not used thats why prefer let over var 
+-let and const have Block scope
+
+
+Hoisting in JS 
+
+-Variables and Functions are hoisted which means there declarations
+is moved on the top of code 
+
+
+Ex:
+
+console.log(a); // prints undefined
+var a = 10; 
+
+// This is what happens
+
+/*
+var a ; 
+
+
+console.log(a); // so we get undefined printed 
+
+a = 10 ;
+
+*/
+
+
+Datatypes in JS
+
+Primitive Types  = number , string , null , undefined , boolean , BigInt , Symbol 
+Reference Types  = []  , {}  , () 
+[] => array
+{} => Object 
+() => function 
+
+Reference Types means referring to same datatype (value)
+
+Ex: var a = [1 ,2 ,3 , 5];
+    var b = a ;  // b is now a reference to the same array reffered by a as well 
+    b.pop(); // modifies both a and b as b is reference to a as well 
+
+    How to create a copy ? Advance part 
+
+
+
+Conditionals => if , else , else-if 
+
+if(true/false){  
+
+}
+
+Ex: if(12>10){
+
+    }else{
+
+    }
+
+
+    if(12>12){
+
+    }else if(44>56){
+
+    }else{
+
+    }
+
+
+if("apple"){
+
+}
+// this also corresponds to true but how ?
+// Will See that in truthy and falsy values in JS Advanced
+
+
+//loops => for , while 
+
+loop means repeat 
+
+for(start ; end ; change){
+    // work to be done 
+}
+
+
+Ex: for(var i = 0 ; i<11 ; i++){
+    console.log(i);
+}
+
+Print 25 -50 using for loop 
+
+for(var i = 25 ; i<=50 ; i++){
+    console.log(i);
+}
+
+while(condition){
+
+}
+
+Ex:
+
+var a = 12 ;
+
+while(a < 20){
+    a++;
+}
+
+console.log(a);
+
+Functions 
+
+-Functions are used mainly for 3 reasons 
+
+Function = Naming a piece/set of code  
+
+1) when you want dont want to use your code now but will use in future
+2) To reuse your code 
+3) To run your code each time with different data 
+
+Ex: 
+This is Function Defination 
+
+    function hello(){
+        console.log("Hello");
+    }
+
+This is Function Call
+
+    hello();
+
+
+Parameters and Arguments in Function
+
+
+The variables n1 , n2 and n4 defined in Function Defination are called
+Parameters
+
+function abcd(n1 , n2 , n4){
+    console.log(n1 , n2 , n4);
+}
+
+The values 1 , 2 , 5 passed to the function abcd are called Arguments
+
+abcd(1 , 2 , 5);
+
+
+
+Array = Group of values 
+
+var arr = [ 1 , 2 , 3 , 4 , 5];
+
+Array indexing starts from 0 (popularly known as 0-based indexing )
+
+console.log(arr[0]); // accesses first element of Array arr 
+
+push , pop , shift , unshift methods in Array 
+
+Push = Used to append a new value at the end of the array 
+
+var arr2 = [1 , 2 , 3 , 4 , 5];
+arr2.push(9); // pushes 9 to the end of array arr2 
+// Now arr2 is [1 , 2 , 3 , 4 , 5, 9]
+
+
+Pop - To remove element present at the end of the array 
+
+arr2.pop();
+
+now arr2 is [ 1 , 2 , 3 , 4 , 5]
+
+unshift = To add element at the beginning of the array
+
+arr2.unshift(12); // adds 12 at the beginning of the array arr2
+
+shift = To remove element present at the beginning of the array
+
+
+arr.shift();
+
+
+
+arr.splice(startidx , numberofeletoDelete , elementstoaddinplaceofThis);
+
+
+Object 
+
+One person complete Details in the form of key value pairs 
+
+1) Blank Object 
+
+var a = {};
+
+2) Filled Object 
+
+var obj = {
+    age : 13, 
+    name : "Harsh",
+    email : "email@yahoo.com",
+    linkedin : "yash24",
+    contact : 939482982992
+};
+
+
+var ghadi = {
+    brand : "Kennath Cole" ,
+    price : "15k" ,
+    color : "silver" ,
+    type : "automatic",
+    digital : false 
+};  
+
+
+Object is one individual identity details 
+
+accessing properties of Object
+
+
+console.log(ghadi.type);
+
+
+Properties v/s Methods in Objects
+
+var ghadi = {
+    brand : "Kennath Cole" ,
+    price : "15k" ,
+    color : "silver" ,
+    type : "automatic",
+    digital : false ,
+    method1 : function(){
+        console.log("Hello World");
+    }
+};  
+
+
+Updating Properties of Objects
+
+ghadi.brand = "Titan brand";
+
