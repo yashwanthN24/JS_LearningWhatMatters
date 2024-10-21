@@ -1,0 +1,60 @@
+Difference between var let const 
+
+var was available in old JS  i.e ES5
+
+var variables have function scope meaning var variables can be used anywhere in its parent function/ global 
+
+Ex:
+
+function abcd(){
+    for(var i = 0 ; i<12 ; i++){
+        console.log(i);
+    }
+    console.log(i);
+}
+
+here i is available even after the loop because its declared using var keyword i.e
+due to Function scope of var keyword 
+
+To Fix this we can use let , Let has Braces Scope or Block scope i.e 
+Its available only in the block { } in which its defined. 
+
+let and const keywords came into picture only in New version of JS i.e
+ES6
+
+let has braces scope or Block scope {}
+
+
+Browser Context API 
+-Provides windows object , Stack , heap of browser for JS to use in 
+
+
+Execution Context means when a function is called it creates an imaginary 
+container which includes 3 things in it :
+1) variables
+2) Functions inside that parent function
+3)lexical environment of that function
+
+This imaginary container is called the Execution Context 
+
+
+Execution Context is a container where the Functions code is executed and
+its created whenever a function is called , it contains 3 things , variables,
+Functions and lexical environment of that function.
+
+Ex: function abcd(){
+        var a = 12; 
+        function def(){
+            var b = 12;
+        }
+}
+
+Lexical environment is a chart which includes the details of that particular function 
+regarding what all things that Function can access and which it cannot access
+Means It holds Scope and Scope chain 
+ 
+
+
+
+
+
