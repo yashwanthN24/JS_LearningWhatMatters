@@ -1,0 +1,205 @@
+Synchronous V/s Asyncchronous 
+
+Synchronous means things happen one after the other ,i.e Only when one command
+completes the other command starts  
+
+
+Asynchronous means All commands/tasks start at the same time , which task/command 
+completes first returns that result of that command first .
+
+In this there is no particular order in Execution . The one thats completes its work first returns its
+result first 
+
+
+Ex: To understand the difference, Consider 4 tasks 
+        task a 1s
+        task b 2s
+        task c 13s
+        task d 0.5s 
+
+    if these tasks were executed in Synchronous way then the wait time for task c would be 16s
+
+Asyncchronous means all these tasks are started at once so by 13s all task a , b , c , d get completed 
+
+
+Biggest Question > How will we know whether we are writing Synchronous code or Asyncchronous code ?
+
+setTimeout()
+setInterval()
+promises() 
+fetch() 
+axios 
+async await 
+XMLHttpRequest 
+
+If your using any of these in your code then your dealing with Asynchronous code 
+
+If none of the above things are being used then your code is Synchronous code 
+
+
+
+Why Asynchronous JS ?
+
+Most of the times our final code will be dependent on some other servers answer/response, 
+In such cases we will not know in how much time will we get the answer/response from that server 
+So this is the reason why we should not write Synchronous Code , So we prefer writing Asynchronous code 
+To avoid blocking of remaining code part , Once we get the answer from the server we execute the code 
+associated with that answer 
+
+
+Synchronous means only request will be sent but response it wont wait and starts
+executing Immediately next line leading to issues when dealing with api and database related operations 
+
+Asynchronous makes sure that you wait till you get the response back i.e(sends request and waits for response to arrive and executes its code only when response is recieved back)
+Making rest of the code Immediately after it to execute peacefully without any disturbance 
+
+Asyncchronous code's motive is when we dont know in how much time will  the code's answer/response come back 
+But when the answer/response comes back execute the code pertaining to that answer
+
+
+JS is not Asynchronous 
+
+Asyncchronous code is actually handled by the browser not js Because Browser is written in C++ and is multithread can handle multiple tasks at once 
+
+Meanwhile JS is single threaded so Remember JS is not Asyncchronous Language
+Browser take care of  the Asynchronous part
+
+
+Async means executing multiple tasks at once right!! 
+
+But JS never does multiple things at once 
+
+Two Stacks : 1) Main Stack
+             2) Side Stack 
+
+Synchronous Code always gets added to Main Stack 
+
+Asynchronous Code always gets added to side Stack 
+
+-when Main Stack gets empty its checks the Side stack 
+
+-To check the completion of the task and 
+
+-executes it by bringing it/placing it  into the Main Stack 
+
+
+
+Ex: 
+
+console.log("hey");
+console.log("hey1");
+setTimeout(function(){
+    console.log("Hey2");
+}  , 0);
+console.log("hey3");
+
+output : hey hey1 hey3 hey2 
+
+Try it out !!!
+
+
+
+Single Threaded v/s MultiThreaded 
+
+JS is Single Threaded i.e it can perform only one task at once excuting only one task in a thread 
+
+MultiThreaded (also called concurrency) means executing multiple tasks at once using multiple threads running simultaneously at once 
+C++ , Java  
+
+
+
+Understanding Callbacks 
+
+
+
+fetch 
+axios 
+promises
+setInterval
+setTimeout
+
+
+All these are for sending the request 
+
+
+after the request is sent and after sometime we get back that response 
+
+To take action when we get the response back we use these:
+
+
+then catch 
+callbacks 
+async await 
+
+
+Asynchronous JS has two things mainly 
+
+1) Writing Async code like Using 
+
+either 
+
+fetch 
+axios 
+XMLHttpRequest
+promises 
+setInterval
+setTimeout
+
+
+To run these Async  Requests answer we use
+
+Callbacks 
+then catch 
+async await
+
+
+Promises 
+
+// user will ask for a number between 0 to 9 and if the number is below 5 
+resolve if not reject 
+
+
+var ans = new Promise((res , rej)=>{
+    var n = Math.floor(Math.random()*10);
+    if(n < 5){
+        res();
+    }else{
+        rej();
+    }
+});
+
+
+ans
+  .then(()=>{
+    console.log("Below 5");
+   })
+   .catch(()=>{
+    console.log("Above 5");
+   })
+
+
+
+
+
+5 Use cases of Async await
+1)Nodejs Database operations 
+2)fetch and axios used in react to give a call to the backend and bring some database
+3)setTimeout
+4)setInterval
+
+
+So basically when you do Something thats dependent on Third Party
+
+1st Party is always the developer i.e YOU 
+2nd Party is the application/website 
+
+3rd Party is everything apart from 1st party and 2nd party 
+
+
+
+concurrency and Parallelism 
+
+concurrency means async and sync code both are being processed at once by main stack and side stack 
+This is called concurrency 
+
+Parallelism depends on the processor cores each core can process one task 
