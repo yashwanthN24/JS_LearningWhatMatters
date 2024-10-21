@@ -1,0 +1,238 @@
+Higher Order Functions 
+
+Higher Order Functions are the Functions that accept a Function in a 
+Parameter OR Return a Function OR Both 
+
+Ex: ForEach Method Always Takes Another Function Inside it , So 
+    ForEach is A Higher Order Function
+
+Constructor Function 
+
+A Function which whenever invoked with "new" keyword Returns An Object 
+if we use "This" keyword inside that function.
+It returns an object with all of the properties and methods mentioned 
+inside that function with This keyword , such Function is called Constructor Function.
+
+this refers to the window object 
+
+
+Ex:
+function abcd(){
+    this.name = "harsh";
+} 
+
+var person1 = new abcd(); // new keyword infront of function call makes a new blank object and returns to the parent variable
+
+
+
+function circularButton(color){
+    this.radius = 2 ; 
+    this.color = color ; 
+    this.icon = false ;
+    this.pressable = true ;
+}
+
+
+var redbtn = new circularButton("red");
+var greenbtn = new circularButton("green");
+
+
+
+First Class Functions 
+
+A Language is said to have First Class Fucntions when the Functions in that 
+Language are treated as Normalvalues Or like variables  , you can save them , you can pass them as
+Arguments to other Functions 
+
+
+setTimeout(function(){
+    console.log("Hello");
+} , 5000);
+
+
+New Keyword 
+
+new Keyword always creates a blank object and calls the thing next to new keyword 
+
+Ex:  Constructor Function
+
+function abcd(){
+    this.age = 12;
+}
+
+var obj1 = new abcd();
+
+
+This creates  an object as shown below and stores that in obj1 variable
+ 
+{
+    age : 12;
+} 
+
+
+new means imagine always a blank object gets created
+{ 
+
+}
+
+
+
+IIFE 
+
+Immediately Invoked Function Expression 
+
+// Variables inside IIFE are private so we return an object of getter and setter to deal with that variable
+
+
+
+var ans = (function(){
+    var privatevar = 13 ;
+
+    return {
+        getter: function(){
+            console.log(privatevar);
+        }
+
+        setter : function(val){
+            privatevar = val;
+        }
+    }
+})()
+
+
+Understanding Prototype in JS:
+
+- Go to browser console and create an object 
+
+    var obj1 = {
+        name : "vibha"
+    }
+
+
+   type obj.  your will see many other properties that u didn't define by yourself 
+
+It contains an extra property called [[prototype]] so where does it come from and what does it 
+contain 
+
+
+Javascript by Default adds a property called [[prototype]] to every object 
+so if you ever see any object , you can blindly say that object contains 
+prototype 
+
+So what does prototype contain ?
+
+[[prototype]] contains many helper properties and methods which we can use  
+to complete out task.
+
+Let say we create an Array and we want to know the length of it , what do
+we do , we use ".length"  property on the array 
+
+Did we create .length on that Array no! but still contains .length 
+
+Reason : Many properties and methods are already available to use built by 
+Javascript creators inside prototype of every object
+
+
+Prototype Inheritance 
+
+Inheritance is basically passing parent's features or properties to their children , 
+
+To do the same thing in Javascript with the help of prototype (one extra property always given by 
+Javascript to every object )  is called Prototype Inheritance
+
+
+Understanding this keyword
+
+this keyword is a special keyword in Javascript which changes its value 
+in different context 
+
+Let's see 'this' keyword in different context 
+
+
+Whats Global Scope : Something thats not present inside {} curly braces is considered having 
+Global scope
+
+var a = 12 ;  // has a global scope and is accessible anywhere in this file 
+
+function abcd(){
+    var a1 = 12 ; // this has local scope only within the function 
+}
+
+In Global Scope 
+
+    console.log(this); gives window 
+
+
+In Function Scope 
+
+    function abcd(){
+        console.log(this); gives window 
+    }
+
+
+Function present in object is called Method 
+
+In Method Scope 
+
+var obj = {
+    name : "harsh",
+    method1 : function(){
+        console.log(this);  gives   object obj 
+    }
+}
+
+
+
+obj.method1();
+
+
+So to Conclude this 
+
+Global scope => this = window 
+Function Scope => this = window 
+method scope => this = object 
+
+
+Note : Important 
+
+In any method , "this" keyword always refers to parent object 
+
+
+this In Event Listeners 
+
+var button = document.querySelector("button");
+
+button.addEventListener("click" , function(){
+    console.log(this); 
+    /*
+        this keyword is equal to whatever written before addEventListener ,
+        in this case its button 
+
+
+
+    */
+})
+
+
+Understanding Pure Functions
+
+Pure Function is any function which has these 2 features:
+    
+    1) It should always return same output for same input  
+
+    2) It will never change/update the value of a global variable
+
+
+function calc(val){
+    return val + 2;
+}
+// always same answer if you pass same value for val argument Hence this 
+//function is pure function
+
+
+
+
+
+
+
+
