@@ -1,0 +1,19 @@
+what is DOM ?
+
+- Document Object Model i.e A tree structure if our html file 
+-DOM is considered as frontend part of JS 
+
+
+4 Pillars of DOM 
+
+1) Selection of an Element (HTML element)
+2) Changing HTML 
+3) Changing CSS
+4) Event Listener
+
+
+1) Selecting HTML Element
+
+var a = document.querySelector("h1"); // selects h1 if present in HTML else error 
+
+console.log(a);
