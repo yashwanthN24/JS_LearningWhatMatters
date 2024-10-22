@@ -123,3 +123,61 @@ abc(1 ,4 );
 abc(1);
 abc();
 
+
+var arr = [ 1 , 2 , 3 , 4 , 5];
+var arr2 = arr; // now both arr2 and arr refer to the same array 
+
+// To create a copy we use spread operator ...
+
+var newArr = [...arr];
+console.log(newArr);
+
+// To store multiple argument in one varaiable denoting array we use Rest operator ...
+
+var abcd  = function (a , b , c , ...d){
+    console.log(a , b , c, d);
+}
+
+abcd(1 ,2 , 3 ,4, 5 , 6, 7 );
+
+// Destruturing of Array and object 
+
+var [b , c ] = arr;
+console.log(b ,c);
+
+var[first , , third] = newArr;
+console.log(first ,  third);
+
+
+var obj = { 
+    name : "harsha", 
+    age : 24
+};
+
+var {age : PersonAge}  = obj;
+
+console.log(PersonAge);
+
+//console.log(age);
+
+
+
+// Try catch in js 
+
+// console.log("hey");
+// console.log(hey);
+// console.log("hey");
+
+
+// To handle  above error we use try catch 
+
+
+console.log("hey");
+try{
+    console.log(hey);
+}catch(error){
+    console.log(error);
+}
+console.log("hey");
+
+
