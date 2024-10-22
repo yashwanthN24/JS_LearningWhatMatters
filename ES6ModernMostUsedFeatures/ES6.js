@@ -93,3 +93,33 @@ b1("Good Night!!");
 var g = () => 122;
 
 console.log(g());
+
+
+// Template Literal - String Interpolation 
+
+// `` Backticks and ${} to parse variables in string 
+
+console.log(`hello ${2+2}  is ${4}`);
+
+// Default parameters 
+
+
+function abcd(a = 10 , b = 11 , c = 12){
+    console.log(a , b , c );
+}
+abcd(1 ,2 ,3 );
+abcd(1);
+
+
+
+// Without default paramters 
+
+function abc(a , b , c ){
+    console.log(a , b , c);
+}
+
+abc(1 , 2 , 4);
+abc(1 ,4 );
+abc(1);
+abc();
+
