@@ -1,0 +1,21 @@
+1) let and const : To declare variables and constants 
+
+2) Arrow Functions : Are Just functions that have 3 variations
+
+3) Template Literal : For String Interpolation We use `` (backticks)
+
+4) default parameters : when we dont provide any value to parameters , it takes the default 
+   value assigned to it
+
+5) Rest and Spread Operators :   ... That works differently in different context 
+
+6) Destructuring :  Getting the data from Arrays and Objects into variables
+
+7) Classes : To make objects from a particular blueprint 
+
+8) Promise : To Take care/ handle Async Part of JS 
+
+9) async await : To Care of Async part but more elegantly 
+
+10) try catch : To take care of the code when it gets errors
+
